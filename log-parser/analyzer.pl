@@ -5,7 +5,7 @@ use List::MoreUtils 'pairwise';
 my $i=0;
 my $ii=0;
 
-open FH,"log-5minoff-zero.bin.log";
+open FH,"bin.log";
 
  while( <FH> ) {
         chomp;                 
@@ -17,7 +17,7 @@ open FH,"log-5minoff-zero.bin.log";
 close FH;
 
  foreach (@sum){
-	$ii++;
-	if ($ii%32==0) { printf "\n";}
 	printf "%.2f ",$_/$i;
+	$ii++;
+	if ($ii%256==0) { printf "\n";}
  }
